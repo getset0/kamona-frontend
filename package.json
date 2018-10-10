@@ -24,13 +24,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint src",
-    "precommit": "lint-staged"
+    "lint": "./node_modules/.bin/eslint src"
   },
   "lint-staged": {
     "*.js": [
       "yarn lint --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
